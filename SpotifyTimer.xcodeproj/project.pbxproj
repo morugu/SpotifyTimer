@@ -13,6 +13,7 @@
 		C634D3481DBC9B4300F64BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C634D3461DBC9B4300F64BEE /* Main.storyboard */; };
 		C634D3501DBC9D0D00F64BEE /* StopSpotify.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C634D34F1DBC9D0D00F64BEE /* StopSpotify.scpt */; };
 		C634D3531DBC9E6400F64BEE /* PlaySpotify.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C634D3521DBC9E6400F64BEE /* PlaySpotify.scpt */; };
+		C634D3551DBC9F6D00F64BEE /* ControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C634D3491DBC9B4300F64BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C634D34F1DBC9D0D00F64BEE /* StopSpotify.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = StopSpotify.scpt; sourceTree = "<group>"; };
 		C634D3521DBC9E6400F64BEE /* PlaySpotify.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlaySpotify.scpt; sourceTree = "<group>"; };
+		C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C634D3441DBC9B4300F64BEE /* Assets.xcassets */,
 				C634D3461DBC9B4300F64BEE /* Main.storyboard */,
 				C634D3491DBC9B4300F64BEE /* Info.plist */,
+				C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */,
 			);
 			path = SpotifyTimer;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				C634D3431DBC9B4300F64BEE /* ViewController.swift in Sources */,
 				C634D3411DBC9B4300F64BEE /* AppDelegate.swift in Sources */,
+				C634D3551DBC9F6D00F64BEE /* ControlHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
