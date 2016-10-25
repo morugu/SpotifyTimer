@@ -16,7 +16,8 @@ class ViewController: NSViewController {
     
     var actionDate: Date = Date()
     var countDownTimer: Timer = Timer()
-    
+    var finishDate: Date = Date()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,32 +31,27 @@ class ViewController: NSViewController {
     @IBAction func didTapStartButton(sender: NSButton) {
  
         actionDate = Date()
-        let actionDateComp = getTimerComponents(date: actionDate)
+//        let actionDateComp = getTimerComponents(date: actionDate)
         let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
-        var finishDate = actionDate
+        finishDate = actionDate
         
         let hour = settingDateComp.hour!
         let minutes = settingDateComp.minute!
         let second = settingDateComp.second!
-        actionDate = timerPicker.dateValue
-        
-        print("\(hour)時間")
-        print("\(minutes)分")
-        print("\(second)秒")
         
         finishDate = finishDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
-        print(actionDate)
-        print(finishDate)
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.decrementSecond), userInfo: nil, repeats: true)
         
         timerLabel.stringValue = "\(hour):\(minutes):\(second)"
+        
+        print("finishDate: \(finishDate)")
     }
     
     func decrementSecond() {
-        print("decrementSecond")
         actionDate = actionDate.addingTimeInterval(1.0 * 1)
-        print(actionDate)
+        let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
+        print(interval)
     }
     
     func getTimerComponents(date: Date) -> DateComponents {
