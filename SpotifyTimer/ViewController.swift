@@ -21,12 +21,6 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
     
     @IBAction func didTapStartButton(sender: NSButton) {
  
@@ -39,6 +33,8 @@ class ViewController: NSViewController {
         let second = settingDateComp.second!
         
         finishDate = finishDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
+        let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
+        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.decrementSecond), userInfo: nil, repeats: true)
     }
@@ -46,8 +42,7 @@ class ViewController: NSViewController {
     func decrementSecond() {
         actionDate = actionDate.addingTimeInterval(1.0 * 1)
         let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
-        
-        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
+        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))  
     }
     
     func getTimerComponents(date: Date) -> DateComponents {
