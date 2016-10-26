@@ -14,6 +14,7 @@
 		C634D3501DBC9D0D00F64BEE /* StopSpotify.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C634D34F1DBC9D0D00F64BEE /* StopSpotify.scpt */; };
 		C634D3531DBC9E6400F64BEE /* PlaySpotify.scpt in Resources */ = {isa = PBXBuildFile; fileRef = C634D3521DBC9E6400F64BEE /* PlaySpotify.scpt */; };
 		C634D3551DBC9F6D00F64BEE /* ControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */; };
+		C6B913C51DC0E23D00F520BF /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B913C41DC0E23D00F520BF /* DateUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C634D34F1DBC9D0D00F64BEE /* StopSpotify.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = StopSpotify.scpt; sourceTree = "<group>"; };
 		C634D3521DBC9E6400F64BEE /* PlaySpotify.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlaySpotify.scpt; sourceTree = "<group>"; };
 		C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlHelper.swift; sourceTree = "<group>"; };
+		C6B913C41DC0E23D00F520BF /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				C634D3461DBC9B4300F64BEE /* Main.storyboard */,
 				C634D3491DBC9B4300F64BEE /* Info.plist */,
 				C634D3541DBC9F6D00F64BEE /* ControlHelper.swift */,
+				C6B913C41DC0E23D00F520BF /* DateUtil.swift */,
 			);
 			path = SpotifyTimer;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C634D3431DBC9B4300F64BEE /* ViewController.swift in Sources */,
+				C6B913C51DC0E23D00F520BF /* DateUtil.swift in Sources */,
 				C634D3411DBC9B4300F64BEE /* AppDelegate.swift in Sources */,
 				C634D3551DBC9F6D00F64BEE /* ControlHelper.swift in Sources */,
 			);
@@ -306,6 +310,7 @@
 				C634D34E1DBC9B4300F64BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
