@@ -31,7 +31,6 @@ class ViewController: NSViewController {
     @IBAction func didTapStartButton(sender: NSButton) {
  
         actionDate = Date()
-//        let actionDateComp = getTimerComponents(date: actionDate)
         let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
         finishDate = actionDate
         
@@ -42,16 +41,13 @@ class ViewController: NSViewController {
         finishDate = finishDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
         
         countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.decrementSecond), userInfo: nil, repeats: true)
-        
-        timerLabel.stringValue = "\(hour):\(minutes):\(second)"
-        
-        print("finishDate: \(finishDate)")
     }
     
     func decrementSecond() {
         actionDate = actionDate.addingTimeInterval(1.0 * 1)
         let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
-        print(interval)
+        
+        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
     }
     
     func getTimerComponents(date: Date) -> DateComponents {
