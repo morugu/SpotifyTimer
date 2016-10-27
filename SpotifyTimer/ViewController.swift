@@ -13,11 +13,16 @@ class ViewController: NSViewController {
     @IBOutlet weak var timerPicker: NSDatePicker!
     @IBOutlet weak var timerLabel: NSTextField!
     @IBOutlet weak var startButton: NSButton!
+    @IBOutlet weak var modeControl: NSSegmentedCell!
     
     var actionDate: Date = Date()
     var countDownTimer: Timer = Timer()
     var finishDate: Date = Date()
-        
+    
+    struct Mode {
+        static let Play = 0,Stop = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,7 +47,19 @@ class ViewController: NSViewController {
     func decrementSecond() {
         actionDate = actionDate.addingTimeInterval(1.0 * 1)
         let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
-        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))  
+        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
+        if interval <= 0 {
+            switch modeControl.selectedSegment {
+            case Mode.Stop:
+                ControlHelper.Stop()
+                break
+            case Mode.Play:
+                ControlHelper.Play()
+                break
+            default: break
+            }
+            countDownTimer.invalidate()
+        }
     }
     
     func getTimerComponents(date: Date) -> DateComponents {
