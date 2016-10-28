@@ -703,21 +703,10 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-hq-2F7">
-                                <rect key="frame" x="71" y="153" width="102" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="vq5-Oj-vMR">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="Play" selected="YES"/>
-                                        <segment label="Stop" tag="1"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-x6-Ay7">
-                                <rect key="frame" x="87" y="31" width="70" height="32"/>
+                                <rect key="frame" x="61" y="31" width="123" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fky-YL-oKx">
+                                <buttonCell key="cell" type="push" title="Timer Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fky-YL-oKx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -739,10 +728,20 @@
                                     <datePickerElements key="datePickerElements" hour="YES" minute="YES" second="YES"/>
                                 </datePickerCell>
                             </datePicker>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-hq-2F7">
+                                <rect key="frame" x="71" y="153" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="vq5-Oj-vMR">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Play" selected="YES"/>
+                                        <segment label="Stop" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="modControl" destination="1r7-hq-2F7" id="MGm-fq-qYd"/>
                         <outlet property="modeControl" destination="vq5-Oj-vMR" id="USX-mn-i8J"/>
                         <outlet property="startButton" destination="vI8-x6-Ay7" id="SyI-4p-78Z"/>
                         <outlet property="timerLabel" destination="dUK-Cd-F58" id="Ozl-Rc-Vzj"/>

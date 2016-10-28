@@ -23,28 +23,20 @@ class ViewController: NSViewController {
         static let Play = 0,Stop = 1
     }
     
+    struct StartBtnStatus {
+        static let Stop = 0,Counting = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func didTapStartButton(sender: NSButton) {
-        
-        modeControl.isEnabled = false
- 
-        actionDate = Date()
-        finishDate = actionDate
-        
-        let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
-        let hour = settingDateComp.hour!
-        let minutes = settingDateComp.minute!
-        let second = settingDateComp.second!
-        
-        finishDate = finishDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
-        
-        let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
-        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
-        
-        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.decrementSecond), userInfo: nil, repeats: true)
+        if startButton.tag == StartBtnStatus.Stop {
+            switchCountdownMode()
+        } else if startButton.tag == StartBtnStatus.Counting {
+            switchStopMode()
+        }
     }
     
     func decrementSecond() {
@@ -61,16 +53,40 @@ class ViewController: NSViewController {
                 break
             default: break
             }
-            modeControl.isEnabled = true
-            countDownTimer.invalidate()
+            switchStopMode()
         }
     }
     
     func getTimerComponents(date: Date) -> DateComponents {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour, .minute, .second], from: date)
-        
         return components
+    }
+    
+    func switchCountdownMode() {
+        modeControl.isEnabled = false
+        startButton.title = "Timer Stop"
+        startButton.tag = 1
+        
+        actionDate = Date()
+        let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
+        let hour = settingDateComp.hour!
+        let minutes = settingDateComp.minute!
+        let second = settingDateComp.second!
+        
+        finishDate = actionDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
+        
+        let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
+        timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
+        
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.decrementSecond), userInfo: nil, repeats: true)
+    }
+    
+    func switchStopMode() {
+        modeControl.isEnabled = true
+        startButton.title = "Timer Start"
+        startButton.tag = 0
+        countDownTimer.invalidate()
     }
 }
 
