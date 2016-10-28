@@ -28,16 +28,19 @@ class ViewController: NSViewController {
     }
     
     @IBAction func didTapStartButton(sender: NSButton) {
+        
+        modeControl.isEnabled = false
  
         actionDate = Date()
-        let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
         finishDate = actionDate
         
+        let settingDateComp = getTimerComponents(date: timerPicker.dateValue)
         let hour = settingDateComp.hour!
         let minutes = settingDateComp.minute!
         let second = settingDateComp.second!
         
         finishDate = finishDate.addingTimeInterval(Double(hour) * 3600.0 + Double(minutes) * 60.0 + Double(second) * 1.0)
+        
         let interval = finishDate.timeIntervalSince1970 - actionDate.timeIntervalSince1970
         timerLabel.stringValue = DateUtil.convertSecondsToDate(seconds: Int(interval))
         
@@ -58,6 +61,7 @@ class ViewController: NSViewController {
                 break
             default: break
             }
+            modeControl.isEnabled = true
             countDownTimer.invalidate()
         }
     }
