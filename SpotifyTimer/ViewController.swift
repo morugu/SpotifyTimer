@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var timerLabel: NSTextField!
     @IBOutlet weak var startButton: NSButton!
     @IBOutlet weak var modeControl: NSSegmentedCell!
+    @IBOutlet var mainView: NSView!
     
     var actionDate: Date = Date()
     var countDownTimer: Timer = Timer()
@@ -37,6 +38,10 @@ class ViewController: NSViewController {
         } else if startButton.tag == StartBtnStatus.Counting {
             switchStopMode()
         }
+    }
+    
+    override func viewWillAppear() {
+        mainView.layer?.backgroundColor = NSColor(red:0.16, green:0.16, blue:0.16, alpha:1.0).cgColor
     }
     
     func decrementSecond() {
