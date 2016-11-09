@@ -687,36 +687,25 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-40-5cj">
-                                <rect key="frame" x="268" y="149" width="134" height="17"/>
+                                <rect key="frame" x="251" y="144" width="178" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Remaining Time" id="nma-UA-KSx">
-                                    <font key="font" size="13" name="HiraKakuProN-W6"/>
+                                    <font key="font" size="17" name="HiraKakuProN-W6"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-Cd-F58">
-                                <rect key="frame" x="297" y="111" width="77" height="17"/>
+                                <rect key="frame" x="252" y="85" width="176" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="00:00:00" id="71l-cK-zVN">
-                                    <font key="font" size="13" name="HiraKakuProN-W6"/>
+                                    <font key="font" size="33" name="HiraKakuProN-W6"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-x6-Ay7">
-                                <rect key="frame" x="61" y="44" width="123" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Timer Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fky-YL-oKx">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="didTapStartButtonWithSender:" target="XfG-lQ-9wD" id="U8J-14-pCY"/>
-                                </connections>
-                            </button>
                             <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dv-x8-0ci">
-                                <rect key="frame" x="67" y="108" width="114" height="27"/>
+                                <rect key="frame" x="67" y="110" width="114" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerMode="range" id="2ai-ca-qdL">
                                     <font key="font" metaFont="system"/>
@@ -730,7 +719,7 @@
                                 </datePickerCell>
                             </datePicker>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1r7-hq-2F7">
-                                <rect key="frame" x="71" y="166" width="102" height="24"/>
+                                <rect key="frame" x="71" y="162" width="102" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="vq5-Oj-vMR">
                                     <font key="font" metaFont="system"/>
@@ -740,6 +729,17 @@
                                     </segments>
                                 </segmentedCell>
                             </segmentedControl>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-x6-Ay7">
+                                <rect key="frame" x="61" y="46" width="123" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Timer Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fky-YL-oKx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapStartButtonWithSender:" target="XfG-lQ-9wD" id="U8J-14-pCY"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
