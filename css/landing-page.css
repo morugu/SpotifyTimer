@@ -22,7 +22,7 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -35,8 +35,9 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    /*background: url(../img/intro-bg.jpg) no-repeat center center;*/
     background-size: cover;
+    background-color: #000000;
 }
 
 .intro-message {
@@ -49,6 +50,7 @@ h6 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
+    color: rgba(30, 215, 95, 1.0);
 }
 
 .intro-divider {
@@ -167,4 +169,8 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+.download-btn {
+    margin-bottom: 15px;
 }
