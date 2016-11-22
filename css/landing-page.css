@@ -174,3 +174,7 @@ p.copyright {
 .download-btn {
     margin-bottom: 15px;
 }
+
+body {
+    background-color: black
+}
