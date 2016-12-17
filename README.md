@@ -1,8 +1,6 @@
 # SpotifyTimer
-Sleep and Stop timer for Spotify.
+Stop and Start timer for Spotify.
 
 Download from
-https://morugu.github.io/SpotifyTimer/
-
-# Usage
+https://morugu.github.io/SpotifyTimer
 
